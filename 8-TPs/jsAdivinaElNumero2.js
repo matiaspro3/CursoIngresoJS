@@ -9,14 +9,29 @@
 Desde  6 Intentos hasta 10:”falta técnica”
 Más de 10 intentos: “afortunado en el amor!!”.*/
 
-var numeroSecreto; 
-var contadorIntentos;
+var app = angular.module('AdivinaNumero', []);
+
+app.controller("controlNumero", function($scope){
+
+	$scope.numeroIngresado="";
+	$scope.cantidadIntentos="";
+
+});
 
 function comenzar()
 {
-	//Genero el número RANDOM entre 1 y 100
-	 
-	
+	var numeroSecreto = Math.floor((Math.random() * 10) + 1);
+	var contador = 0;
+	for(;;)
+	{
+		contador++;
+		if(parseInt($scope.numeroIngresado) == numeroSecreto)
+		{
+			break;
+		}
+	}
+
+	$scope.cantidadIntentos = contador;
 
 }
 
