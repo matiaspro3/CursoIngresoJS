@@ -9,32 +9,34 @@
 		<link rel="stylesheet" type="text/css" href="../animacion.css">
 		<!--final de Estilos-->
 
+<!-- 1)incluimos angular en el projecto con la siguiente libreria que ya la tenemos localmente -->
+	<script SRC="../bower_components/angular/angular.min.js" TYPE="text/javascript"></script>
 		<!--Lógica-Programación-->
 		<script type="text/javascript" src="jsFerreteFacturacion.js"></script>
         <!--Final de Lógica-Programación -->
 		
 
 		</head>
-	<body>
+	<body ng-app="ferreteFacturacion" ng-controller="ControladorFacturacion">
 		<div class="CajaUno animated bounceInDown">
 			
 		
 			<form id="FormIngreso">
-
-				<input type="text"  placeholder="Ingrese Precio" id="PrecioUno">
-				<input type="text"  placeholder="Ingrese Precio" id="PrecioDos">
-				<input type="text"  placeholder="Ingrese Precio" id="PrecioTres">
+				<input type="text"  placeholder="Ingrese Precio" ng-model="PrecioUno">
+				<input type="text"  placeholder="Ingrese Precio" ng-model="PrecioDos">
+				<input type="text"  placeholder="Ingrese Precio" ng-model="PrecioTres">
 				<br>
 				
 			</form>
-			
+			Resultado: {{resultado}}
 		</div>
+
 		<div class="CajaUno animated bounceInLeft">
 			
 			
-			<button  class="MiBotonUTN" onclick="Sumar()" >Sumar</button>
-			<button  class="MiBotonUTN" onclick="Promedio()" >Promedio</button>
-			<button  class="MiBotonUTN" onclick="PrecioFinal()" >Precio Final</button>
+			<button  class="MiBotonUTN" ng-click="Sumar()" >Sumar</button>
+			<button  class="MiBotonUTN" ng-click="Promedio()" >Promedio</button>
+			<button  class="MiBotonUTN" ng-click="PrecioFinal()" >Precio Final</button>
 
 		</div>
 
